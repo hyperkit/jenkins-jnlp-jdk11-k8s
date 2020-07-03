@@ -19,6 +19,7 @@ RUN apt-get update -qqy \
     python python-pip groff \
     rlwrap \
     rsync \
+    dnsutils \
   && rm -rf /var/lib/apt/lists/*
 
 RUN pip install --upgrade pip setuptools
