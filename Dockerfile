@@ -19,6 +19,7 @@ RUN apt-get update -qqy \
     python python-pip groff \
     rlwrap \
     rsync \
+    maven \
     dnsutils \
   && rm -rf /var/lib/apt/lists/*
 
