@@ -21,6 +21,7 @@ RUN apt-get update -qqy \
     rsync \
     maven \
     dnsutils \
+    awscli \
   && rm -rf /var/lib/apt/lists/*
 
 RUN pip install --upgrade pip setuptools
