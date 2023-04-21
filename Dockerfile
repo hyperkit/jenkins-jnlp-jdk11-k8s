@@ -44,6 +44,6 @@ RUN mkdir -p ~/.docker/cli-plugins
 
 RUN curl https://github.com/docker/buildx/releases/download/v0.10.4/buildx-v0.10.4.linux-amd64 -o ~/.docker/cli-plugins/docker-buildx
 
-RUN curl https://dl.k8s.io/release/v1.27.0/bin/linux/amd64/kubectl -o /usr/local/bin/kubectl && chmod +x /usr/local/bin/kubectl
+RUN curl https://dl.k8s.io/release/v1.27.0/bin/linux/amd64/kubectl -Lo /usr/local/bin/kubectl && chmod +x /usr/local/bin/kubectl
 
 ENTRYPOINT ["jenkins-agent"]
