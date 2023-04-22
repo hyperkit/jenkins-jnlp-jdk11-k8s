@@ -24,7 +24,7 @@ RUN apt-get update -qqy \
     awscli \
   && rm -rf /var/lib/apt/lists/*
   
-RUN curl -o aws-iam-authenticator https://amazon-eks.s3.us-west-2.amazonaws.com/1.21.2/2021-07-05/bin/linux/amd64/aws-iam-authenticator \
+RUN curl -Lo aws-iam-authenticator https://github.com/kubernetes-sigs/aws-iam-authenticator/releases/download/v0.5.9/aws-iam-authenticator_0.5.9_linux_amd64 \
   && chmod +x ./aws-iam-authenticator \
   && cp ./aws-iam-authenticator /usr/bin/aws-iam-authenticator 
 
