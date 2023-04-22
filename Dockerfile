@@ -46,4 +46,6 @@ RUN curl https://github.com/docker/buildx/releases/download/v0.10.4/buildx-v0.10
 
 RUN curl https://dl.k8s.io/release/v1.27.0/bin/linux/amd64/kubectl -Lo /usr/local/bin/kubectl && chmod +x /usr/local/bin/kubectl
 
+RUN git config --global --add safe.directory '*'
+
 ENTRYPOINT ["jenkins-agent"]
