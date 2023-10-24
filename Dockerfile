@@ -24,7 +24,7 @@ RUN apt-get update -qqy \
     awscli \
   && rm -rf /var/lib/apt/lists/*
   
-RUN curl -o aws-iam-authenticator https://amazon-eks.s3.us-west-2.amazonaws.com/1.21.2/2021-07-05/bin/linux/amd64/aws-iam-authenticator \
+RUN curl -Lo aws-iam-authenticator https://github.com/kubernetes-sigs/aws-iam-authenticator/releases/download/v0.6.11/aws-iam-authenticator_0.6.11_linux_amd64 \
   && chmod +x ./aws-iam-authenticator \
   && cp ./aws-iam-authenticator /usr/bin/aws-iam-authenticator 
 
@@ -42,8 +42,8 @@ RUN usermod -a -G sudo jenkins \
 
 RUN mkdir -p ~/.docker/cli-plugins
 
-RUN curl https://github.com/docker/buildx/releases/download/v0.10.4/buildx-v0.10.4.linux-amd64 -o ~/.docker/cli-plugins/docker-buildx
+RUN curl https://github.com/docker/buildx/releases/download/v0.11.2/buildx-v0.11.2.linux-amd64 -o ~/.docker/cli-plugins/docker-buildx
 
-RUN curl https://dl.k8s.io/release/v1.27.0/bin/linux/amd64/kubectl -o /usr/local/bin/kubectl && chmod +x /usr/local/bin/kubectl
+RUN curl https://dl.k8s.io/release/v1.28.3/bin/linux/amd64/kubectl -o /usr/local/bin/kubectl && chmod +x /usr/local/bin/kubectl
 
 ENTRYPOINT ["jenkins-agent"]
